@@ -3,22 +3,48 @@
 
 ## Process Outline
 
-1. The VACC
+1. The VACC  
+    * ssh connection
+    * file manegment software
+    * user account structure
+    * VACC navigation
+    * checking out computing nodes
+2. Installations  
+    * Conda, Miniconda, Bioconda
+    * Nf-core & Nextflow
+    * Singularity (check version/should be installed)
+    * reference libraries
 
-2. Installations
-
-3. Directory Organization
+3. Directory Organization  
 
 4. Sample Sheets
 
-5. Pipeline Set-up
+5. NextFlow pipline setup  
+    * param generation
+    * adding nnf-params.json to project repo
 
-6. Run
+6. Sbatch Script  
+    * parts of your sbatch script  
+        * slurm resource/job request
+        * env setup
+        *Nextflow call command
+    * example
+
+7. Runing Your Job  
+    * review repo structure
+    * preview post submission repo structure
+    * submitting an sbatch script to slurm
+
+8. Post Submission Review  
+    * check running job progress
+    * check completed job slurm statistics
+
+9. Trouble Shooting  
 
 ---
 ---
 
-# THE VACC
+# **THE VACC**
 
 The Vermont Advanced Computing Center (VACC), provides access to services like data/file managment and high-performance computing clusters used for small and large jobs or workflows.
 [University of Vermont VACC](https://www.uvm.edu/vacc)
@@ -38,7 +64,10 @@ VACC Access With SSH:
 ```
 ssh jdoe@vacc-user1.uvm.edu
 ```
-3. You will then be asked for your password
+alternatively you can replacee user1 with user2, user3, or user4.  
+
+3. You will then be asked for your password  
+
     * If done correctly you should be in a directory like below:
     ```
     [jdoe@vacc-user1 jdoe]$
@@ -100,7 +129,7 @@ srun --qos=interactive --mem=5G --cpus-per-task 1 --pty bash
 
 ---
 ---
-# Installations
+# **Installations**
 
 There are a couple single time installations that you must do to move onto the next step of this process. To continue with installations you must have access to the VACC, using an SSH connection and in a BASH enviroment. 
 
@@ -114,12 +143,6 @@ or
 ```
 Either is fine 
 
-## Software
-
-To move on to the next step of this process you need to make a couple installations to your home directory in the VACC.  
-
-1. Conda (Miniconda)
-2. NF-Core and Nextflow
 
 ## Conda
 
@@ -209,7 +232,7 @@ wget -L ftp://ftp.ensembl.org/pub/release-${latest_release}/gtf/homo_sapiens/Hom
 ---
 
 
-# Directory Organization
+# **Directory Organization**
 
 Directory Organization is important to be aware of so that you can keep track of important files and downloads, as well as ensure correct paths are used when using nextflow piplines to run scripts.  
   
@@ -246,13 +269,10 @@ cd Epic_GenomeProject1
 mkdir scripts
 ```
 It is not too important where your reference library is located as long as it is easily accessible by path for nextflow.
-
+ 
 ---
 ---
-# **Setting Up Your Scripts**  
----
----
-# Sample Sheets
+# **Sample Sheets**
 
 ### What is a sample sheet?
 
@@ -277,7 +297,7 @@ Once your sample sheet has been creating it should be exported as a .csv file to
 
 ---
 ---
-# Setting up a Nextflow Pipeline
+# **Setting up a Nextflow Pipeline**
 
 The goal at the end of this step is to add a json file to your scripts project directory that includes instuctions for nextflow to locate its input path (your sample sheet), output path (a new empty directory for results), fasta path (your fasta file path for the genome reference library), the gtf path (your gtf file pathfor the genome reference library), and finally the trimmer method you will be using to narrow down the data. 
 
@@ -320,7 +340,7 @@ Copy this code.
 
 ---
 ---
-# Adding nf-params.json to the scripts directory
+# **Adding nf-params.json to the scripts directory**
 
 There are a couple ways you can add the json code you copied to your scripts directory for nextflow to access.  
   
@@ -361,7 +381,7 @@ Alternativly you can complete this process by creating the json file on your loc
 ---
 ---
 
-# sbatch Script
+# **Sbatch Script**
 
 The final step in this whole process is to create and run an sbatch script.  
 The sbatch script will send a job request to slurm with the given resource requirements and then run any commands provided in the script.  
@@ -468,7 +488,7 @@ If you followed these steps in the nano text editor save this file with the name
 ---
 ---
 
-# Running your job
+# **Running your job**
 
 If you have followed this tutorial correctly you should currently have a project repository that looks similar to this.
 ```
@@ -509,7 +529,7 @@ If done correctly you should see your job submission and the job id printed onto
 ---
 ---
 
-# Post Submission
+# **Post Submission**
 
 Check your job is running with
 ```
@@ -548,7 +568,7 @@ to review a report. (replace jobid with the id in your logs directory)
 ---
 ---
 
-# Trouble shooting 
+# **Trouble shooting**
 
 After your first run, a logs directory will be made in your scripts directory. 
 
