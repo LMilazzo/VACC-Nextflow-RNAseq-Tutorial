@@ -631,3 +631,4 @@ If you expect your job should still be running but the previous command does not
 ## Is My file organization stuff optimized? how can it be better? 
 ## Lucas didnt know how to copy local device files to a vacc directory without the use of filezilla. I tried and couldnt figure it out.
 ## Did I miss any online nextflow setup steps that are required?
+## Adding --max_time 90.h --max_cpus 40 --max_memory 240.GB to the sbtach, how does this differ from the resources outlined in the slurm request?
