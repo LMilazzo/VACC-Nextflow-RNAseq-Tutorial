@@ -682,24 +682,24 @@ The developers of the rnaseq pipeline used in this tutorial ask that if nf-core/
 
 ### Others
 
-~Filezilla Information~  
+Filezilla Information  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FileZilla. FileZilla, Overview. Retrieved July 2, 2024, [link](https://filezilla-project.org/)  
 
-~BASH Documentation~  
+BASH Documentation  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BASH. BASH, The Borne-Again Shell. Retrieved July 2, 2024, [link](https://tiswww.case.edu/php/chet/bash/bashtop.html)  
 
-~Anaconda Information~  
+Anaconda Information  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wikipedia contributors. (2024, June 14). Anaconda (Python distribution). In Wikipedia, The Free Encyclopedia. Retrieved July 2, 2024, from [link](https://en.wikipedia.org/w/index.php?title=Anaconda_(Python_distribution)&oldid=1229055294)
 
-~Ensembl Information~  
+Ensembl Information~  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E!ensembl. ensembl. Retrieved July 2, 2024, from [link](https://useast.ensembl.org/index.html)  
 
-~Nano Information~  
+Nano Information  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Nano Development Team. The GNU Nano Text Editor Home Page. Retrieved July 2, 2024, from [link](https://www.nano-editor.org/)
 
-~Command Prompt Information~  
+Command Prompt Information  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wikipedia contributors. (2024, July 2). Cmd.exe. In Wikipedia, The Free Encyclopedia. Retrieved July 2, 2024, from [link](https://en.wikipedia.org/w/index.php?title=Cmd.exe&oldid=1232186033)
   
-~PowerShell Information~  
+PowerShell Information  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wikipedia contributors. (2024, July 1). PowerShell. In Wikipedia, The Free Encyclopedia. Retrieved July 2, 2024, from [link](https://en.wikipedia.org/w/index.php?title=PowerShell&oldid=1231982127)
 
