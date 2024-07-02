@@ -19,9 +19,9 @@
 
 4. Sample Sheets
 
-5. NextFlow pipline setup  
+5. Nextflow pipline setup  
     * param generation
-    * adding nnf-params.json to project repo
+    * adding nf-params.json to project repo
 
 6. Sbatch Script  
     * parts of your sbatch script  
@@ -311,46 +311,48 @@ Once your sample sheet has been creating it should be exported as a .csv file to
 ---
 # **Setting up a Nextflow Pipeline**
 
-**Disclaimer** -> This is only cone way to set up a Nextflow Pipeline there are other ways that may be used
+**Disclaimer** -> This is only one way to set up a Nextflow Pipeline there are other ways that may be used
+
+**Disclaimer** -> For more information about the process used by this pipeline and why this pipeline is used see nf-core_rnaseq_Extra_info.md
 
 The goal at the end of this step is to add a json file to your scripts project directory that includes instuctions for nextflow to locate its input path (your sample sheet), output path (a new empty directory for results), fasta path (your fasta file path for the genome reference library), the gtf path (your gtf file pathfor the genome reference library), and finally the trimmer method you will be using to narrow down the data. 
 
 First follow this link to to the [nf-core/rnaseq site](https://nf-co.re/rnaseq/3.14.0/docs/usage) and Launch the most recent version displayed on the webpage.
 
-![alt text](image-2.png)
+![alt text](NextflowImages/image-2.png)
 
 You should be brought to this page.
 
-![alt text](image-3.png)
+![alt text](NextflowImages/image-3.png)
 
 -Fill out the Nextflow Command Line Flags information.  
 Highlighted are required fields. These include the project name, as well as some important informations nextflow requires such as the profile which should be altered to reflect the container software you are using, in this case singularity, and resume. Resume has a default value of false. This should almost always be changed to True, this allows you to rerun your program from the last stopping point in case of a timeout or error.
 
-![alt text](image-4.png)
+![alt text](NextflowImages/image-4.png)
 
 -Fill out Input/Output Options  
 Highlighted are required fields. The first field is the input, which is the path to your sample_sheet.csv in the VACC. The output field should be the path to a new directory within your project directory. This output directory does not have to currently exist and if there is not a directory with the given path nextflow will make one. Email is an optional field to recieve a emailed summary upon the pipelines completion. You may also optionally specify the name and header for your multiqc file that will be created during the pipeline process.
 
-![alt text](image-5.png)
+![alt text](NextflowImages/image-5.png)
 
 -If a reference genome library is being used the paths to the downloaded files should be specified in the Reference Genome options tab.  
 You should have a fasta file as well as a gtf file. Put their paths in the highlighted boxes. There are many more optional fields you may fill in accordingly. For more information about the reference genome library downloads see the *Reference Library* section.
 
-![alt text](image-6.png)
+![alt text](NextflowImages/image-6.png)
 
 -Finally adjust the read trimming options
 Change the trimming method in the highlighted drop down box to fastp.
 
-![alt text](image-7.png)
+![alt text](NextflowImages/image-7.png)
 
 -You can now select the launch button at the top or bottom of the page. 
 
-![alt text](image-8.png)
+![alt text](NextflowImages/image-8.png)
 
 You wll be brought to a page that contains the contents you will add to your json file in scripts.  
 Copy this code.
 
-![alt text](image-9.png)
+![alt text](NextflowImages/image-9.png)
 
 ---
 ---
@@ -373,15 +375,15 @@ The first and easiest way is with your powershell or command line ssh connection
         ```  
   4. Paste the json contents you previously copied
   
-  ![alt text](image-10.png) 
+  ![alt text](NanoImages/image-10.png) 
 
   5. Use ctrl-x to exit the text editor.
 
         * You will be prompted
-        ![alt text](image-11.png)
+        ![alt text](NanoImages/image-11.png)
         * type "y"
         * you will be prompted
-        ![alt text](image-12.png)
+        ![alt text](NanoImages/image-12.png)
         * type a file name (it must be nf-param.json)  
         * ENTER
  6. Confirm your flie saved with
@@ -448,7 +450,7 @@ Finally create a job name, as well as make an output location for the logs that 
 # %x=job-name %j=jobid
 #SBATCH --output=./logs/%x_%j.out.txt
 ```
-**MAYBE ADD A SECTION TO TELL PEOPLE HOW TO DETERMINE HOW MANY RESOURCES THEY SHOULD USE SO THE VACC PEOPLE DONT GET ANGRY**
+
 
 ### Enviroment set-up
 
@@ -631,7 +633,7 @@ If you expect your job should still be running but the previous command does not
 ---
 ---
 
-# Citing Vermont Advanced Computing Center
+# **Citing Vermont Advanced Computing Center**
 
 The Vermont Advanced Computing Center requires that if your use of their high performance computing cluster results in any publication, talk, or proceeding, you recognize this with the following disclaimer.
 
@@ -642,7 +644,7 @@ This statement of acknowledgement only applies to the Bluemoon cluster. To revie
 ---
 ---
 
-# Citing nf-core/rnaseq Pipeline
+# **Citing nf-core/rnaseq Pipeline**
 
 The developers of the rnaseq pipeline used in this tutorial ask that if nf-core/rnaseq is used in analysis and presented you site it with the follow doi:
 
@@ -650,7 +652,7 @@ The developers of the rnaseq pipeline used in this tutorial ask that if nf-core/
 
 ---
 ---
-# Referenced in this tutorial
+# **Referenced in this tutorial**
 
 ### Vermont Advanced Computing Center
 - Home   
