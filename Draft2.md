@@ -704,9 +704,4 @@ The developers of the rnaseq pipeline used in this tutorial ask that if nf-core/
   
 ~PowerShell Information~  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wikipedia contributors. (2024, July 1). PowerShell. In Wikipedia, The Free Encyclopedia. Retrieved July 2, 2024, from [link](https://en.wikipedia.org/w/index.php?title=PowerShell&oldid=1231982127)
-  
-
-
-
-    
 
