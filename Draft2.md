@@ -206,8 +206,6 @@ The nf-core enviroment can be deactivated with
 
 ```
 conda deactivate nf-core
-#or
-source deactivate nf-core
 ```
 
 ## Singularity
