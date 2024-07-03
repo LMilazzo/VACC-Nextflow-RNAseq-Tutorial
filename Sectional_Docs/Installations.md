@@ -3,8 +3,7 @@
     * Conda, Miniconda, Bioconda
     * Nf-core & Nextflow
     * Singularity (check version/should be installed)
-    * reference libraries
-
+    * reference genomes
 # **Installations**
 
 There are a couple single time installations that you must do to move onto the next step of this process. To continue with installations you must have access to the VACC, using an SSH connection and in a BASH enviroment. 
@@ -53,7 +52,7 @@ conda config --add channels bioconda
 
 ## NF-core & Nextflow
 
-[NF-core](https://nf-co.re/) is a workflow management software. Using NF-core pipelines is a powerful way to ensure experimental reproducability in case something fails, or it must be rerun.
+[NF-core](https://nf-co.re/) is a workflow management software. Using NF-core pipelines is a powerful way to ensure experimental reproducibility in case something fails, or it must be rerun.
 
 To [install NF-core & Nextflow](https://nf-co.re/docs/nf-core-tools/installation#activate-shell-completions-for-nf-coretools) as one, which is what we want in this case, run the following lines in your VACC home directory.
 ```
@@ -84,7 +83,7 @@ conda deactivate nf-core
 ```
 
 ## Singularity
-Singularity is a container software used to containers that hold applications and their needed operating system libraries. Using singularity helps ensure that all needed packages and applications are in a single place in case you were to run your scripts or jobs on another device.   
+Singularity is a container software used to create containers that hold applications and their needed operating system libraries. Using singularity helps ensure that all needed packages and applications are in a single place in case you were to run your scripts or jobs on another device.   
   
 Singularity should be preestablished within your VACC enviroment.  
 Ensure Singularity exists within your enviroment with
@@ -93,10 +92,10 @@ which singularity
 ```
 This should output a path which includes the current version being used.
 
-## Reference Library
-In most cases it is required that you install a reference library that nextflow can reference while running. This may library may be specific to your research being conducted.
+## Reference Genome
+In most cases it is required that you install a reference genome that nextflow can reference while running. This genome may be specific to your research being conducted.
   
-An example of downloading a good reference library for humans from the Ensembl.  
+An example of downloading a good reference genome for humans from the Ensembl.  
   
 Ensure that you are in an empty directory with a name such as "Reference_Genomes" or "Human_Genome_Refrences" so that your reference files can be found easy.
   
@@ -112,7 +111,7 @@ Download their latest gtf file for humans
 ```
 wget -L ftp://ftp.ensembl.org/pub/release-${latest_release}/gtf/homo_sapiens/Homo_sapiens.GRCh38.${latest_release}.gtf.gz
 ```
-[Ensembl](https://useast.ensembl.org/index.html) also has options for other reference libraries too.
+[Ensembl](https://useast.ensembl.org/index.html) also has options for other reference genomes too.
 
 
 ---

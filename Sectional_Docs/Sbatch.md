@@ -4,7 +4,7 @@
     * parts of your sbatch script  
         * slurm resource/job request
         * env setup
-        *Nextflow call command
+        * Nextflow call command
     * example
 
 # **Sbatch Script**
@@ -110,7 +110,7 @@ module load singularity
 nextflow run nf-core/rnaseq -r 3.14.0 -profile singularity -params-file nf-params.json -resume
 ```
 
-If you followed these steps in the nano text editor save this file with the name like "run_nfcore_rnaSeq.sh". If you followed these steps in a personal text editor use a filemanegment software or copy and paste your file into your VACC project scripts directory. 
+If you followed these steps in the nano text editor save this file with the name like "run_nfcore_rnaSeq.sh". If you followed these steps in a personal text editor use a file manegment software or copy and paste your file into your VACC project scripts directory. 
 
 ---
 ---

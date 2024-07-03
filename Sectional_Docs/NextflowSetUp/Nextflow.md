@@ -1,6 +1,6 @@
 ## Process Outline
 
-5. Nextflow pipline setup  
+5. Nextflow pipeline setup  
     * param generation
     * adding nf-params.json to project repo
 
@@ -8,7 +8,7 @@
 
 **Disclaimer** -> This is only cone way to set up a Nextflow Pipeline there are other ways that may be used
 
-The goal at the end of this step is to add a json file to your scripts project directory that includes instuctions for nextflow to locate its input path (your sample sheet), output path (a new empty directory for results), fasta path (your fasta file path for the genome reference library), the gtf path (your gtf file pathfor the genome reference library), and finally the trimmer method you will be using to narrow down the data. 
+The goal at the end of this step is to add a json file to your scripts project directory that includes instuctions for nextflow to locate its input path (your sample sheet), output path (a new empty directory for results), fasta path (your fasta file path for the reference genome), the gtf path (your gtf file pathfor the reference genome), and finally the trimmer method you will be using to narrow down the data. 
 
 First follow this link to to the [nf-core/rnaseq site](https://nf-co.re/rnaseq/3.14.0/docs/usage) and Launch the most recent version displayed on the webpage.
 
@@ -28,8 +28,8 @@ Highlighted are required fields. The first field is the input, which is the path
 
 ![alt text](NextflowImages/image-5.png)
 
--If a reference genome library is being used the paths to the downloaded files should be specified in the Reference Genome options tab.  
-You should have a fasta file as well as a gtf file. Put their paths in the highlighted boxes. There are many more optional fields you may fill in accordingly. For more information about the reference genome library downloads see the *Reference Library* section.
+-If a reference genome is being used the paths to the downloaded files should be specified in the Reference Genome options tab.  
+You should have a fasta file as well as a gtf file. Put their paths in the highlighted boxes. There are many more optional fields you may fill in accordingly. For more information about the reference genome downloads see the *Reference Genome* section.
 
 ![alt text](NextflowImages/image-6.png)
 
@@ -79,7 +79,7 @@ The first and easiest way is with your powershell or command line ssh connection
         ![alt text](NanoImages/image-12.png)
         * type a file name (it must be nf-param.json)  
         * ENTER
- 6. Confirm your flie saved with
+ 6. Confirm your file saved with
     ```
     ls
     ```

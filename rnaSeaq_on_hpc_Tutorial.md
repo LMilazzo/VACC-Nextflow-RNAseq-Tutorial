@@ -5,21 +5,22 @@
 
 1. The VACC  
     * ssh connection
-    * file manegment software
+    * file management software
     * user account structure
     * VACC navigation
     * checking out computing nodes
+
 2. Installations  
     * Conda, Miniconda, Bioconda
     * Nf-core & Nextflow
     * Singularity (check version/should be installed)
-    * reference libraries
+    * reference genomes
 
 3. Directory Organization  
 
 4. Sample Sheets
 
-5. Nextflow pipline setup  
+5. Nextflow pipeline setup  
     * param generation
     * adding nf-params.json to project repo
 
@@ -27,7 +28,7 @@
     * parts of your sbatch script  
         * slurm resource/job request
         * env setup
-        *Nextflow call command
+        * Nextflow call command
     * example
 
 7. Runing Your Job  
@@ -46,7 +47,7 @@
 
 # **THE VACC**
 
-The Vermont Advanced Computing Center (VACC), provides access to services like data/file managment and high-performance computing clusters used for small and large jobs or workflows. VACC is responsible for multiple clusters the one used in this process is Bluemoon.
+The Vermont Advanced Computing Center (VACC), provides access to services like data/file management and high-performance computing clusters used for small and large jobs or workflows. VACC is responsible for multiple clusters the one used in this process is Bluemoon.
 [University of Vermont VACC](https://www.uvm.edu/vacc)
 
 ### SSH Connection
@@ -81,7 +82,7 @@ As of July 2024, the VACC has been expanded to a total of 4 user systems. user2,
 
 If you intend on creating new directories, moving files to the vacc, or downloading vacc hosted files to your computer it may be easier to log in using a file managment application such as [Filezilla](https://filezilla-project.org/). 
 
-To acccess the VACC using a filemanegment the credentials are as follows:
+To acccess the VACC using a file manegment the credentials are as follows:
 
 **Host** :  vacc-user1.uvm.edu  
 **Username** : first initial + last name  
@@ -110,7 +111,7 @@ ls -> Displays all contents of a directory
 pwd -> Displays the current directory path  
 mkdir -> Makes a new directory with the given name  
 rmdir -> Deletes the given empty directory  
-rm -r -> Recursivly deletes a directoy and all contents, ***USE CAREFULLY***  
+rm -r -> Recursively deletes a directoy and all contents, ***USE CAREFULLY***  
 cat -> Display file contents  
 squeue -u -> Displays the active jobs & computing nodes for a given user   
 scancel -> Cancels a job with a given job id  
@@ -178,7 +179,7 @@ conda config --add channels bioconda
 
 ## NF-core & Nextflow
 
-[NF-core](https://nf-co.re/) is a workflow management software. Using NF-core pipelines is a powerful way to ensure experimental reproducability in case something fails, or it must be rerun.
+[NF-core](https://nf-co.re/) is a workflow management software. Using NF-core pipelines is a powerful way to ensure experimental reproducibility in case something fails, or it must be rerun.
 
 To [install NF-core & Nextflow](https://nf-co.re/docs/nf-core-tools/installation#activate-shell-completions-for-nf-coretools) as one, which is what we want in this case, run the following lines in your VACC home directory.
 ```
@@ -209,7 +210,7 @@ conda deactivate nf-core
 ```
 
 ## Singularity
-Singularity is a container software used to containers that hold applications and their needed operating system libraries. Using singularity helps ensure that all needed packages and applications are in a single place in case you were to run your scripts or jobs on another device.   
+Singularity is a container software used to create containers that hold applications and their needed operating system libraries. Using singularity helps ensure that all needed packages and applications are in a single place in case you were to run your scripts or jobs on another device.   
   
 Singularity should be preestablished within your VACC enviroment.  
 Ensure Singularity exists within your enviroment with
@@ -218,10 +219,10 @@ which singularity
 ```
 This should output a path which includes the current version being used.
 
-## Reference Library
-In most cases it is required that you install a reference library that nextflow can reference while running. This may library may be specific to your research being conducted.
+## Reference Genome 
+In most cases it is required that you install a reference genome that nextflow can compare genes to while running. This genome may be specific to your research being conducted.
   
-An example of downloading a good reference library for humans from the Ensembl.  
+An example of downloading a good reference genome for humans from the Ensembl.  
   
 Ensure that you are in an empty directory with a name such as "Reference_Genomes" or "Human_Genome_Refrences" so that your reference files can be found easy.
   
@@ -237,7 +238,7 @@ Download their latest gtf file for humans
 ```
 wget -L ftp://ftp.ensembl.org/pub/release-${latest_release}/gtf/homo_sapiens/Homo_sapiens.GRCh38.${latest_release}.gtf.gz
 ```
-[Ensembl](https://useast.ensembl.org/index.html) also has options for other reference libraries too.
+[Ensembl](https://useast.ensembl.org/index.html) also has options for other reference genomes too.
 
 
 ---
@@ -280,7 +281,7 @@ In your project directory create a scripts directory to hold important files and
 cd Epic_GenomeProject1
 mkdir scripts
 ```
-It is not too important where your reference library is located as long as it is easily accessible by path for nextflow.
+It is not too important where your reference genome is located as long as it is easily accessible by path for nextflow.
  
 ---
 ---
@@ -315,7 +316,7 @@ Once your sample sheet has been creating it should be exported as a .csv file to
 
 **Disclaimer** -> For more information about the process used by this pipeline and why this pipeline is used see nf-core_rnaseq_Extra_info.md
 
-The goal at the end of this step is to add a json file to your scripts project directory that includes instuctions for nextflow to locate its input path (your sample sheet), output path (a new empty directory for results), fasta path (your fasta file path for the genome reference library), the gtf path (your gtf file pathfor the genome reference library), and finally the trimmer method you will be using to narrow down the data. 
+The goal at the end of this step is to add a json file to your scripts project directory that includes instuctions for nextflow to locate its input path (your sample sheet), output path (a new empty directory for results), fasta path (your fasta file path for the reference genome), the gtf path (your gtf file path for the reference genome), and finally the trimmer method you will be using to narrow down the data. 
 
 First follow this link to to the [nf-core/rnaseq site](https://nf-co.re/rnaseq/3.14.0/docs/usage) and Launch the most recent version displayed on the webpage.
 
@@ -331,12 +332,12 @@ Highlighted are required fields. These include the project name, as well as some
 ![alt text](NextflowImages/image-4.png)
 
 -Fill out Input/Output Options  
-Highlighted are required fields. The first field is the input, which is the path to your sample_sheet.csv in the VACC. The output field should be the path to a new directory within your project directory. This output directory does not have to currently exist and if there is not a directory with the given path nextflow will make one. Email is an optional field to recieve a emailed summary upon the pipelines completion. You may also optionally specify the name and header for your multiqc file that will be created during the pipeline process.
+Highlighted are required fields. The first field is the input, which is the path to your sample_sheet.csv in the VACC. The output field should be the path to a new directory within your project directory. This output directory does not have to currently exist and if there is not a directory with the given path nextflow will make one. Email is an optional field to receive an emailed summary upon the pipelines completion. You may also optionally specify the name and header for your multiqc file that will be created during the pipeline process.
 
 ![alt text](NextflowImages/image-5.png)
 
--If a reference genome library is being used the paths to the downloaded files should be specified in the Reference Genome options tab.  
-You should have a fasta file as well as a gtf file. Put their paths in the highlighted boxes. There are many more optional fields you may fill in accordingly. For more information about the reference genome library downloads see the *Reference Library* section.
+-If a reference genome is being used the paths to the downloaded files should be specified in the Reference Genome options tab.  
+You should have a fasta file as well as a gtf file. Put their paths in the highlighted boxes. There are many more optional fields you may fill in accordingly. For more information about the reference genome  downloads see the *Reference Genome* section.
 
 ![alt text](NextflowImages/image-6.png)
 
@@ -386,7 +387,7 @@ The first and easiest way is with your powershell or command line ssh connection
         ![alt text](NanoImages/image-12.png)
         * type a file name (it must be nf-param.json)  
         * ENTER
- 6. Confirm your flie saved with
+ 6. Confirm your file saved with
     ```
     ls
     ```
